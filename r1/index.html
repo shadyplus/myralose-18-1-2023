@@ -1,0 +1,560 @@
+
+<!doctype html>
+<html lang="ru" dir="ltr">
+<meta charset="utf-8" />
+
+<head>
+
+<script src="/shared/jquery.min.js"></script>
+
+    <script>
+    function set_validator_errors(){
+        orderValidator.errorTitle = 'يرجى تصحيح الأخطاء التالية'; 
+
+        orderValidator.errorNameField = 'الاسم'; 
+        orderValidator.errorNameMess = 'أدخل أسمك'; 
+        
+        orderValidator.errorPhoneField = 'رقم التليفون'; 
+        orderValidator.errorPhoneMess = 'أدخل رقم الهاتف الصحيح'; 
+        
+        orderValidator.errorAddress = 'أدخل العنوان الصحيح'; 
+        orderValidator.errorRequired = 'يتطلب حقلا'; 
+        orderValidator.errorMaxLength = 'حرف {1} بحد أقصى صالح'; 
+        orderValidator.errorMinLength = 'الحد الأدنى لعدد حروف {1}'; 
+        orderValidator.errorEmailField = 'البريد الإلكتروني';
+        orderValidator.errorEmail = 'تم تحديد بريد إلكتروني غير صالح';
+        }
+    </script>
+    
+<script>
+
+
+window.app = {
+    timestamp: parseInt((new Date()).getTime() / 1000),
+    jq: jQuery,
+    formAction: window.location.href,
+    leadToken: '63c7f2a22885d6.52492750',
+    offers: {"36302":{"id":36302,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5990","price2":"11990","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""}},
+    currentOffer: {"id":36302,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5990","price2":"11990","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""},
+    allowedCountries: ["DZ"],
+    _setOfferId: false,
+    streamHid: '4OyHy6my',
+    showcaseUrl: '',
+    disablePhoneMask: Boolean(),
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+</script><script src="/shared/form.validate.js?12"></script>
+<script src="/shared/interPhoneCodes.js"></script>
+<script src="/shared/showcase.js?v=1"></script>
+<script src="/shared/form.incomplete.js?10"></script>
+<script src="/shared/main2.js?17"></script>
+
+
+
+
+
+    <script src="https:/ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/icon.ico" type="image/x-icon">
+    <title> أقراص  ميرالوز </title>
+    <link rel="stylesheet" href="/r1/filer1uploadslandingjob16445909b33789481442673881710c6282a5a9/r2/css/css.css">
+    <link rel="stylesheet" href="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/css/style.css">
+    
+    <style type="text/css">
+        .section1{
+            margin-bottom: 150px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section1 container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <section>
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 col-lg-offset-3">
+                            <div class="row">
+                                <h1 class="section1__header">
+                                    <span class="pink">  أقراص ميرالوز 
+                                </h1>
+                                <div class="section1__imgblock col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="row">
+                                        <span class="section1__img_block"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 hidden-sm visible-xs col-xs-12">
+                                    <div class="row">
+                                        <ul class="section1__list">
+                                            <li class="section1__list_item"> شحن سريع <strong></strong></li>
+                                            <li class="section1__list_item"><strong> دفع </strong> عند الاستلام </li>
+                                            <li class="section1__list_item"><strong> نحن نشحن </strong>  لجميع المناطق  </li>
+                                            <li class="section1__list_item"><strong> فحص الطرد عند الاستلام </strong> </li>
+                                        </ul>
+                                        <span class="section1__info_text">
+                                             اسرع واحصل عليها الان  <span class="green"> !بتخفيض </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="section1__formblock col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="section1__form">
+                                            <h4 class="section1__form_header" >  اليوم فقط   <span class="form__header_text"> سعر العرض: </span></h4>
+                                            <div class="form__container">
+                                                <div class="price__new">
+                                                    <b class="price_land_s1">
+                                                       <x-newprice>5990</x-newprice></b>
+                                                    <b class="price_land_curr">
+                                                        <x-currency>DA</x-currency></b> * 
+                                                </div>
+                                                <div class="header__counter">
+                                                    <div class="counter__num">
+                                                        <span class="counter__num_text"> الأيام المتبقية حتى نهاية العرض: </span>
+                                                        <script src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/cdn/170dd125cc17fd186714a5318b4981e7.js"></script>
+                                                    </div>
+                                                </div>
+                                                <form class="form landing__form" action="" method="post">
+                                                    <ul class="form__list">
+                                                        <li class="form__item">
+                                                                <input name="csrf_token" type="hidden" value="083b8b605d992f04b64568a3f2a42549:1674048163" />
+    <select name="offer" class="form-control country_chang" style="display: none;">
+        <option
+                data-country-code="DZ"
+                selected="selected"
+                value="36302"
+        >
+            Алжир        </option>
+    </select>
+
+                                                                </li>
+                                                        <li class="form__item">
+                                                            <input required style="margin-right:13px; float: left;" placeholder="الإسم كامل" type="text" name="name">
+                                                        </li>
+                                                        <li class="form__item">
+                                                            <input required placeholder="رقم الهاتف" dir="rtl" type="tel" class="form__input" name="phone">
+                                                        </li>
+                                                        <li class="form__item">
+                                                            <input type="submit" value="طلب العرض" style="background-color: #e50b95; border-radius: 57%;">
+                                                        </li>
+                                                    </ul>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section1__down col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+                                </div>
+                            </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container section-2">
+        <div class="row">
+            <section class="section2">
+                <div class="section2__block col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 hidden-sm">
+                            <div class="row">
+                                <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/kalend.png" alt="">
+                                <span class="section2__arrow_right"></span>
+                            </div>
+                        </div>
+                        <div class="section2_rightblock col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <p class="section2__block_text">
+                                    أقراص إستحلاب ميرالوز  - هذا هو  <span class="yellow"> أقوى مكمل غذائي </span>  لحرق الدهون و  <span class="yellow"> قمع شهيتك </span> .
+                                </p>
+                                <ul class="section2__items ">
+                                    <li class="section2_item"><strong> سرعة </strong>  فقدان الوزن </li>
+
+                                    <li class="section2_item"><strong>  التطبع مع </strong>  التمثيل الغذائي </li>
+
+                                    <li class="section2_item"> زيادة عملية حرق الدهون </li>
+                                    
+
+                                    <li class="section2_item"><strong> التخلص الكامل </strong>  لدهون الجسم </li>
+
+                                    <li class="section2_item"><strong> قلة الشهية </strong>  والتخلص من الإفراط في الأكل </li>
+                                    <li class="section2_item"><strong> تقليل الرغبة الشديدة </strong>  للوجبات السريعة السكرية </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section3">
+                <div class="section3__block col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <h2 class="section3__header">
+                                    أقراص  ميرالوز  - مكمل غذائي لإنقاص الوزن
+                                    <span class="section3__header_yellow"> !لإنقاص الوزن الكلي </span>
+                                </h2>
+                                <p class="section3__text">  أقراص  ميرالوز   <strong> تحارب جميع </strong>
+                                    أسباب الوزن الزائد، عملية الحرق تستغرق 12 ساعة لتحطيم الدهون وإنتاج الطاقة
+                                </p>
+                                <p class="section3__text"> على عكس الوسائل الأخرى للتخسيس، بفضل التأثير التدريجي،  <strong> يتم  فقدان الوزن المستدام </strong> ، يتم تسريع جميع عمليات الهضم و  <strong> الوزن لا يعود </strong>  حتى بعد انتهاء الدورة.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5 hidden-sm">
+                            <div class="row">
+                                <span class="section3__img_block"></span>
+                                <img class="section3__img" src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/turbo-img-fruit.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section4">
+                <div class="section4__block col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <h2 class="section4__header"> تركيبة طبيعية فريدة
+                            <span class="pink">! لحرق الدهون بشكل فعال </span>
+                        </h2>
+                        <p class="section4__header_text"> يحتوي المكمل   الغذائي ميرالوزعلى مكونات طبيعية فقط تساعد على التخلص من الوزن الزائد دون الإضرار بالصحة. يمتص الجسم المواد الطبيعية بسهولة، كما أنه يعطي طاقة إضافية
+                        </p>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-4">
+                                    <div class="row row-item-left" style="margin-left: 0px;">
+                                        <div >
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 70%; ">
+                                        </div>
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع الاول </span> <br> </h4>
+                                            <p class="section4__text"><strong> تحضير الجسم </strong> <br>  لفقدان الوزن بأمان  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-4">
+                                    <div class="row">
+                                        <img class="section4__item_imgbig" src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/turbo-img-circle.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-4 hidden-xs">
+                                    <div class="row row-item-right">
+                                        <div class="row-item-text exception">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع السابع </span> </h4>
+                                            <p class="section4__text"><strong> التطبع مع </strong>   التمثيل الغذائي والحركة المعوية ووظيفة المعدة </p> 
+                                             <!-- <h5 id="h5fontr">Normalisation sur le métabolisme, la motilité intestinale et la fonction de l'estomac</h5> -->
+                                             <!-- <p id="h5fontr" class="section4__text"><strong>  Normalisation sur </strong>  le métabolisme, la motilité intestinale et la fonction de l'estomac </p> -->
+                                        </div>
+                                        <div style="margin: 0 15px;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 consist2">
+                            <div id="aq" class="row">
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-4 ">
+                                    <div class="row row-item-left">
+                                        <div style="margin: 0 15px ;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100% ;">
+                                        </div>
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع الثاني</span> <br> </h4>
+                                            <p class="section4__text"><strong> تناقص </strong> <br>   الشهية،و قلة الرغبة  في تناول الحلويات  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-4">
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-4 hidden-xs">
+                                    <div class="row row-item-right">
+                                        <div class="row-item-text exception">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع السادس</span> <br></h4>
+                                            <p class="section4__text"><strong> تحسين </strong> <br>  للحالة العامة لجميع أجهزة الجسم </p>
+                                        </div>
+                                        <div style="margin: 0 15px;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section4__downblock col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="section4__item up col-lg-4 col-md-4 col-sm-8">
+                                    <div class="row row-item-left">
+                                        <div style="margin: 0 15px;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%; ">
+                                        </div>
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع الثالث</span> <br> </h4>
+                                            <p class="section4__text"><strong>بدء</strong> <br>  عملية تحلل الدهون النشطة    </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-8">
+                                    <div class="row row-item-left">
+                                        <div style="margin: 0 15px;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%; ">
+                                        </div>
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع الرابع</span> <br> </h4>
+                                            <p class="section4__text"><strong> التقليل  </strong> <br>  في تكوين خلايا دهنية جديدة (الخلايا الشحمية)  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section4__item up col-lg-4 col-md-4 col-sm-8">
+                                    <div class="row row-item-right">
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day"> الاسبوع الخامس </span> <br> </h4>
+                                            <p class="section4__text"><strong> تحويل </strong> <br>  الدهون والبروتينات والكربوهيدرات إلى طاقة  </p>
+                                        </div>
+                                        <div style="margin: 0 15px;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%; ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-8 hidden-desk">
+                                    <div class="row row-item-left">
+                                        <div style="margin: 0 15px;">
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%; ">
+                                        </div>
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day"> الاسبوع السادس </span> <br></h4>
+                                            <p class="section4__text"><strong> تحسين  </strong> <br>  للحالة العامة لجميع أجهزة الجسم </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section4__item col-lg-4 col-md-4 col-sm-8 hidden-desk">
+                                    <div class="row row-item-left">
+                                        <div >
+                                            <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/grapefruit.png" alt="" style="width: 100%; ">
+                                        </div>
+                                        <div class="row-item-text">
+                                            <h4 class="section4__header_item"><span class="color-day">  الاسبوع السابع</span> <br> </h4>
+                                            <p class="section4__text"><strong> تطبيع </strong> <br>  التمثيل الغذائي وحركة الأمعاء ووظائف المعدة </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="section7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="section7__block col-lg-7 col-md-7">
+                                    <div class="row">
+                                        <h4 class="section7__header"> كيف تستخدم أقراص  ميرالوز؟ .</h4>
+                                        <p class="section7__text"> حبتين مرتين في اليوم قبل كل وجبة .    </p>
+                                        <p class="section7__text"> لا تتجاوز 6 أقراص إستحلاب في اليوم.</p>
+                                        <p class="section7__text">لا ينصح به مع الرضاعة الطبيعية وللحوامل والأطفال دون سن 14 عامًا.</p>
+                                        <div class="section7__container">
+                                            <h5 class="section7__container_header">
+                                                انتبه! لا تتجاوز 6 أقراص إستحلاب في اليوم   !
+                                            </h5>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section7__rightblock col-lg-5 col-md-5 hidden-sm">
+                                    <div class="row">
+                                        <img id="waterimg" src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/turbo-img-water.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section id="aprovou">  
+        <div id="root" class="content">
+            <h1><strong> !أناس حقيقيون، نتائج حقيقية، رضا حقيقي </strong><br> يؤكد العملاء آثار أقراص ميرالوز </h1>
+            <ul>
+                <li>
+                    <div class="box">
+                        <h3> كريم، 29 </h3>
+                        <figure><img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/testimonial1.jpg" style="width: 250px;"></figure>
+                        <h2> خسارة  <strong> 17 كجم </strong></h2>
+                        <p>  عندما كنت أستعد لحفل زفافي، كان علي أن أفقد الوزن على الفور! كنت أعتمد على  أقراص ميرالوز ولم أشعر بخيبة أمل. أنا الآن أنحف بوزن 17 كجم ولم أعد أبدو مثل فيل في حلة بعد الآن. </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <h3> سماح، 37 </h3>
+                        <figure><img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/testimonial3.jpg" style="width: 250px;"></figure>
+                        <h2> خسارة  <strong> 29 كجم </strong></h2>
+                        <p> لقد أثرت السمنة على حياتي حقًا. لا أحد يواعد فتاة سمينة جدا. هذه المرة حفرت في كعبي. بدأت أتناول طعامًا أفضل وأتناول  ميرالوز، الذي أوصى به صديق لي. الصور هنا تتحدث عن نفسها. الآن يمكنني الاستمتاع بكل لحظة في حياتي  </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <h3> حنان، 29 </h3>
+                        <figure><img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/testimonial2.jpg" style="width: 250px;"></figure>
+                        <h2> خسارة  <strong> 21 كجم </strong></h2>
+                        <p> هل تعلم ما هو الأفضل في فقدان الوزن؟ الإعجاب في عيون الأصدقاء. في كل مرة نلتقي فيها، أبدو أنحف وأنحف، وليس لديهم أي فكرة عن كيفية القيام بذلك. وهذا كله بفضل  ميرالوز.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <h3> سارة، 34 </h3>
+                        <figure><img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/testimonial4.jpg" style="width: 250px;"></figure>
+                        <h2> خسارة  <strong> 18 كجم </strong></h2>
+                        <p> يعاني كل فرد في عائلتي من مشاكل الوزن. في كل مرة كنت أرغب في إنقاص وزني، قالوا لي إن ذلك لا معنى له لأنني لا أستطيع تغيير جيناتي. و ها أنا ! لقد فقدت وزني</p>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </section>
+    <div class="section10 container-fluid">
+        <img src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/3-31.png" class="bg-10img">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <section>
+                        <div class="section10__block col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 col-lg-offset-4">
+                                    <div class="row">
+                                        <h2 class="section10__header"><span class="pink"> ! جعل  ميرالوز إنقاص الوزن ممكنا  </span> أقراص  ميرالوز </h2>
+                                        <div class="section1__formblock section10__leftblock col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="row">
+                                                <div class="section1__form">
+                                                    <h4 class="section1__form_header"> احصل على سعر مخفض  <span class="form__header_text"> سعر العرض: </span></h4>
+                                                    <div class="form__container">
+                                                        <div class="price__new">
+                                                            <b class="price_land_s1">
+                                                               <x-newprice>5990</x-newprice></b>
+                                                            <b class="price_land_curr">
+                                                                <x-currency>DA</x-currency></b> * 
+                                                        </div>
+                                                    </div>
+                                                    <div class="header__counter">
+                                                        <div class="counter__num">
+                                                            <span class="counter__num_text"> : ينتهي العرض في خلال  </span>
+                                                            <script src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/cdn/170dd125cc17fd186714a5318b4981e7.js"></script>
+                                                        </div>
+                                                    </div>
+                                                    <form id="form" class="form landing__form" action="" method="post">
+                                                        <ul class="form__list">
+                                                            <li class="form__item">
+                                                                    <input name="csrf_token" type="hidden" value="083b8b605d992f04b64568a3f2a42549:1674048163" />
+    <select name="offer" class="form-control country_chang" style="display: none;">
+        <option
+                data-country-code="DZ"
+                selected="selected"
+                value="36302"
+        >
+            Алжир        </option>
+    </select>
+
+                                                                    </li>
+                                                            <li class="form__item">
+                                                                <input required placeholder="الإسم بالكامل" type="text" name="name">
+                                                            </li>
+                                                            <li class="form__item">
+                                                                <input required placeholder="رقم الهاتف" dir="rtl" type="tel" class="form__input" name="phone">
+                                                            </li>
+                                                            <li class="form__item">
+                                                                <input type="submit" value="طلب العرض" style="background-color: #e50b95; border-radius: 57%;">
+                                                            </li>
+                                                        </ul>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="section10__rightblock col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="row">
+                                                <p class="section10__rightblock_text"> اسرع لشراء أقراص ميرالوز! </p>
+                                                <span class="section1__img_block"></span>
+                                                <img id="trap" src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/img/turbo-img_niz.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="padding: 60px 0 20px">
+                        <center><p>LIMITED LIABILITY COMPANY TORG PLUS OGRN: 1205600008558 INN: 5614085260 KPP: 561401001</p>
+<p>462407,  15, Chemin du Prince d’Annam, EL-Biar, Alger</p> 
+
+
+    
+            <p class="conf-link doclinks">
+        <a class="nav-link"  href="" onclick="window.open('/policy_en.php'); return false;">سياسة الخصوصية</a>
+          <!-- | -->
+        <!-- <a class="nav-link"  href="" onclick="window.open('/terms_en.php'); return false;">Terms & Conditions</a> -->
+      </p>
+      
+    
+</center>
+    </footer>
+    <script src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/js/jquery.countdown.min.js"></script>
+    <script src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/js/slick.min.js"></script>
+    <script src="uploads/landing/job164459/09b33789481442673881710c6282a5a9/r2/js/main.js"></script>
+</body>
+
+</html>
